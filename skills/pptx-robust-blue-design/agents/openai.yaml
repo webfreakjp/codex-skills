@@ -1,0 +1,4 @@
+interface:
+  display_name: "Robust Blue PPTX"
+  short_description: "Create robust blue PPTX decks"
+  default_prompt: "Use $pptx-robust-blue-design to create or restyle a PowerPoint deck in the robust blue guidebook-like visual style."
