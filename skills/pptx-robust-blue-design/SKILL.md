@@ -16,9 +16,16 @@ Use this skill to create or restyle PowerPoint decks in the guidebook style capt
    - Create a new deck from an outline or slide JSON.
    - Restyle an existing `.pptx` while preserving text.
    - Manually edit a `.pptx` using the same tokens and layout rules.
-3. Prefer `scripts/guidebook_pptx.py` for repeatable generation or restyling.
-4. Validate the result by opening it with `python-pptx` and running `unzip -t`.
-5. Check the deck for unwanted source-template labels before finalizing. Do not add organization names, agency labels, logos, or copied footer branding unless the user explicitly provides replacement branding.
+3. Pick slide layouts by message type before generating:
+   - `message`: one central claim with 2-3 supporting points.
+   - `compare`: contrasting responsibilities, options, before/after, or tradeoffs.
+   - `process`: a short sequence where the order matters. Add a short explanation for every step.
+   - `roadmap`: phased migration or time-based rollout.
+   - `challenge-solution`: paired risks, issues, and mitigations.
+   - `decision`: final choices, asks, or next actions.
+4. Prefer `scripts/guidebook_pptx.py` for repeatable generation or restyling.
+5. Validate the result by opening it with `python-pptx` and running `unzip -t`.
+6. Check the deck for unwanted source-template labels before finalizing. Do not add organization names, agency labels, logos, or copied footer branding unless the user explicitly provides replacement branding.
 
 ## Script Usage
 
@@ -67,7 +74,7 @@ Use this structure for `create`:
 }
 ```
 
-Supported slide types are `cover`, `section`, `content`, `two-column`, and `process`. If a type is missing, use `content`.
+Supported slide types are `cover`, `section`, `content`, `message`, `two-column`, `compare`, `process`, `roadmap`, `challenge-solution`, and `decision`. If a type is missing, use `content`.
 
 ## Editing Rules
 
@@ -75,6 +82,10 @@ Supported slide types are `cover`, `section`, `content`, `two-column`, and `proc
 - Use deep blue section slides sparingly for major dividers.
 - Use white content slides for most information.
 - Keep title text large, blue, and left aligned on content slides.
-- Use pale-blue cards only for callouts, definitions, and selected states.
+- Use pale-blue cards only for callouts, definitions, selected states, or grouped points that are introduced by the slide title or body. Do not drop unexplained cards onto a slide.
 - Use light gray lines and boxes for structure.
+- Avoid progress/status bars by default. Use them only when they add information that the main slide body does not already show.
+- For any `process` or step-based slide, explain every step with a short phrase. Do not show step labels only.
+- Keep parallel items visually equal by default. If one card, row, column, or step is colored differently, explain why it is selected, current, recommended, or risky.
+- Do not reuse the same layout for every slide. Match the layout to the slide's communication job.
 - Avoid copied source branding. The style is reusable, but the original organization's visible label is not.

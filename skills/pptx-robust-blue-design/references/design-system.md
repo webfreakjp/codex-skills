@@ -44,14 +44,27 @@
 
 - White background with the same heading treatment as content slides.
 - Use three to five horizontal step blocks.
+- Add one short explanatory phrase to every step block.
 - Active/current step uses secondary blue with white text.
 - Inactive steps use light gray or pale blue with dark text.
-- Footer progress bars can repeat the same step labels in compact form.
+- Avoid footer progress bars by default. They should appear only when the main slide is not already showing the same stages.
+
+### Message-Specific Layouts
+
+- Use `message` for a strong claim supported by two or three proof points.
+- Use `compare` when the audience must understand a contrast.
+- Use `roadmap` when the slide is about phases, maturity, or rollout.
+- Use `challenge-solution` when risks and mitigations must be paired row by row.
+- Use `decision` when the slide should end with asks, actions, or choices.
 
 ## Composition Rules
 
 - Keep rectangles at small corner radius only.
 - Use cards for actual grouped content, not page sections.
 - Prefer thin rules, simple boxes, and restrained callout cards.
+- Choose layout from the message first, then place content. Avoid defaulting every slide to body text plus a side card.
+- Explain visual devices before reusing them. Cards need a clear grouping label, and status bars need an introduced stage model.
+- Do not duplicate a process as both main step cards and a footer progress bar unless the footer is explicitly useful for orientation across a later section.
+- Treat side-by-side cards, columns, rows, and steps as equal unless the copy explicitly states that one is selected, current, recommended, or high risk.
 - Keep any footer text generic or user-provided.
 - Do not include source-document organization names, copied logos, or visible attribution from the PDF template.
